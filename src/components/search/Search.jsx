@@ -1,13 +1,14 @@
-import "./Search.css";
-import { ImageResults } from "../imageResults/imageResults";
-export const Search=()=>{
-    return(
-        <div className="Search-box">
-            <p > 🔍 Search: </p>
-            <input type="search" name="search" placeholder="Looking for something?" />
-         <button type="submit" onClick={()=>{
-             <ImageResults/>
-         }}>Click</button>
-        </div>
-    )
-}
+export const Search = ({ search, setSearch }) => {
+  return (
+    <div className="search-box">
+      <input
+        className="searchByTitle"
+        type="search"
+        name="search"
+        placeholder="Search photos by title..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+    </div>
+  );
+};
